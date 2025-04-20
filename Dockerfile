@@ -8,10 +8,6 @@ RUN  pip install -r requirements.txt
 
 RUN pip install -U triton --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/Triton-Nightly/pypi/simple/triton-nightly && rm -rf ~/.cache/pip/*
 
-ENV CUDA_HOME=/usr/local/cuda-12.6
-ENV PATH=$CUDA_HOME/bin:$PATH
-ENV LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-
 # 设置国内源
 RUN mkdir -p /app/index-tts && rm -rf /etc/apt/sources.list && rm -rf /etc/apt/sources.list.d/*ubuntu*
 COPY sources-22.04.list /etc/apt/sources.list
