@@ -14,4 +14,4 @@ COPY sources-22.04.list /etc/apt/sources.list
 RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
 RUN pip config set install.trusted-host mirrors.aliyun.com
 
-ENTRYPOINT ["python", "webui.py", "--device", "0", "--server_name", "0.0.0.0", "--server_port", "7860", "--model_dir", "pretrained_models/Spark-TTS-0.5B"]
+ENTRYPOINT ["python", "webui.py", "--server_name", "0.0.0.0", "--server_port", "7860", "--model_dir", "SparkAudio/Spark-TTS-0.5B"]
