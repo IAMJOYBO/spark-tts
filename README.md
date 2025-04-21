@@ -1,6 +1,9 @@
 # spark-tts
 Docker镜像自动构建并上传到阿里云（最新Docker镜像前往 [GitHub Action](../../actions) 查看）
-## Images：registry.cn-hangzhou.aliyuncs.com/joybo/spark-tts:latest
+## Docker镜像下载
+```bash
+docker pull registry.cn-hangzhou.aliyuncs.com/joybo/spark-tts:latest
+```
 # 使用方法
 ```bash
 git clone https://github.com/SparkAudio/Spark-TTS.git
