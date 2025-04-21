@@ -1,10 +1,10 @@
-FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel
+FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 
 WORKDIR /app/spark-tts
 ENV TZ=Asia/Shanghai
 
 RUN apt update && apt install -y wget net-tools tree curl ffmpeg gcc g++ cmake && wget https://github.com/SparkAudio/Spark-TTS/raw/refs/heads/main/requirements.txt && apt clean && rm -rf /var/lib/apt/lists/*
-RUN  pip install -r requirements.txt
+RUN  pip install -r requirements.txt && pip install -U gradio gradio_client && rm -rf ~/.cache/pip/*
 
 RUN pip install -U triton --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/Triton-Nightly/pypi/simple/triton-nightly && rm -rf ~/.cache/pip/*
 
